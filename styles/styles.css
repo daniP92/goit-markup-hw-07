@@ -69,11 +69,9 @@ h5 {
   background-color: var(--background-footer-color);
 }
 
-.nav-list a,
-.mail-header,
-.phone-header {
-  font-family: 'Roboto';
-  font-style: normal;
+.nav-list .link,
+.link--mail-header,
+.link--phone-header {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -81,15 +79,7 @@ h5 {
 }
 
 /* Remove link styles */
-.logo-section a,
-.nav-list a,
-.mail-header,
-.phone-header,
-.footer-section a,
-.mail-footer,
-.phone-footer,
-.icons-our-team a,
-.label-name-checkbox a {
+.link {
   color: inherit;
   text-decoration: none;
   list-style: none;
@@ -132,8 +122,8 @@ h5 {
   background-color: var(--blue-theme-color);
 }
 
-.mail-header,
-.phone-header {
+.link--mail-header,
+.link--phone-header {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -167,22 +157,22 @@ h5 {
   margin-top: 32px;
 }
 
-.nav-list a {
+.nav-list .link {
   position: relative;
   height: 100%;
 }
 
-.nav-list a:hover,
-.nav-list a:focus,
-.nav-list .current-page,
-.header-info-contacts a:hover,
-.header-info-contacts a:focus {
+.nav-list .link:hover,
+.nav-list .link:focus,
+.nav-list .link--current-page,
+.header-info-contacts .link:hover,
+.header-info-contacts .link:focus {
   color: var(--blue-theme-color);
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-list a:hover::after,
-.nav-list .current-page::after {
+.nav-list .link:hover::after,
+.nav-list .link--current-page::after {
   position: absolute;
   content: '';
   background: var(--blue-theme-color);
@@ -203,13 +193,13 @@ h5 {
   height: 16px;
 }
 
-.header-info-contacts a {
+.header-info-contacts .link {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.header-info-contacts a+a {
+.header-info-contacts .link+.link {
   margin-left: 40px;
 }
 
@@ -428,32 +418,32 @@ h5 {
   gap: 10px;
 }
 
-.icon-social-media {
+.link--icon-social-media {
   width: 44px;
   height: 44px;
   padding: 12px;
 }
 
-.icon-social-media svg {
+.link--icon-social-media svg {
   width: 20px;
   height: 20px;
   fill: #AFB1B8;
 }
 
-.icons-our-team .icon-social-media {
+.icons-our-team .link--icon-social-media {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.icon-social-media:hover svg,
-.icon-social-media:focus svg {
+.link--icon-social-media:hover svg,
+.link--icon-social-media:focus svg {
   fill: #ffffff;
   transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-social-media:hover,
-.icon-social-media:focus {
+.link--icon-social-media:hover,
+.link--icon-social-media:focus {
   border-radius: 50%;
   background-color: var(--blue-theme-color);
   transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -505,16 +495,14 @@ h5 {
   fill: #AFB1B8;
 }
 
-.customer:hover svg,
-.customer:focus svg {
-  fill: var(--blue-theme-color);
-  transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+.regular-customers .customer:hover svg,
+.regular-customers .customer:focus svg,
 .regular-customers .customer:hover,
 .regular-customers .customer:focus {
   border-color: var(--blue-theme-color);
+  fill: var(--blue-theme-color);
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-section {
@@ -540,8 +528,8 @@ h5 {
   color: #ffffff;
 }
 
-.footer-adress .mail-footer,
-.footer-adress .phone-footer {
+.footer-adress .link--mail-footer,
+.footer-adress .link--phone-footer {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -551,10 +539,10 @@ h5 {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-adress .mail-footer:hover,
-.footer-adress .phone-footer:hover,
-.footer-adress .mail-footer:focus,
-.footer-adress .phone-footer:focus {
+.footer-adress .link--mail-footer:hover,
+.footer-adress .link--phone-footer:hover,
+.footer-adress .link--mail-footer:focus,
+.footer-adress .link--phone-footer:focus {
   color: var(--blue-theme-color);
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -567,7 +555,7 @@ h5 {
   padding-bottom: 12px;
 }
 
-.footer-adress .mail-footer {
+.footer-adress .link--mail-footer {
   display: block;
   padding-bottom: 12px;
 }
@@ -597,21 +585,21 @@ h5 {
   margin-top: 20px;
 }
 
-.icon-social-media.footer {
+.link--icon-social-media.footer {
   width: 44px;
   height: 44px;
   background-color: #FFFFFF10;
   border-radius: 50%;
 }
 
-.icon-social-media.footer:hover,
-.icon-social-media.footer:focus {
+.link--icon-social-media.footer:hover,
+.link--icon-social-media.footer:focus {
   background-color: var(--blue-theme-color);
   border-radius: 50%;
   transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-social-media.footer svg {
+.link--icon-social-media.footer svg {
   fill: #fff;
 }
 
